@@ -1,19 +1,18 @@
-import './App.css'
-import TableComponent from './components/table/View'
-import FooterComponent from './components/layout/Footer'
-import useApp from './hooks/appHook'
-const App = () => {
-  const data = useApp({
-    currency: 'CAD',
-    weBuy: '4',
-    exchange: '5',
-    weSell: '6'
-  })
+import RoutesView from './routes/index'
+import Sidebar from './components/layout/Sidebar'
+// import Header from './components/layout/Header'
+function App() {
   return (
-    <div className="App">
-      <TableComponent data={data} />
-      <FooterComponent />
-    </div>
+    <>
+      <Sidebar/>
+      <div id="content">
+        {/* <Header /> */}
+        <div className="container-fluid py-2 section-content">
+          <RoutesView />
+        </div>
+      </div>
+    </>
   )
 }
+
 export default App
