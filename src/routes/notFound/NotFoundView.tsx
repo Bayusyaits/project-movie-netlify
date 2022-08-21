@@ -9,7 +9,7 @@ const NotFoundView = () => (
       Page Not Found
     </div>
     <Link to="/">
-      Back to home
+      Back to movie
     </Link>
   </div>
 )

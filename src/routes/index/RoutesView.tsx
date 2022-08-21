@@ -1,14 +1,16 @@
 import { Suspense } from 'react'
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
-import Home from '../home'
+import Movie from '../movie'
+import MovieDetail from '../movie/detail'
 import NotFound from '../notFound'
 
 function RouteView() {
   return (
     <Suspense>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<MovieDetail />} />
+        <Route path="/" element={<Movie />} />
         {/* Not Found */}
         <Route path="*" element={<NotFound />} />
       </Routes>
