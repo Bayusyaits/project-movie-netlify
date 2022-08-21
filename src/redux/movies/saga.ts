@@ -10,10 +10,8 @@ import {
 } from './reducer'
 import {
   MOVIE_FETCH,
-  MOVIE_FETCH_SUCCESS,
   MOVIE_FETCH_FAILURE,
   MOVIE_DETAIL_FETCH,
-  MOVIE_DETAIL_FETCH_SUCCESS,
   MOVIE_DETAIL_FETCH_FAILURE
 } from './types'
 type Props = Query & any
@@ -107,13 +105,11 @@ function* movieDetailFetch({ payload }: Props): any {
     yield put(movieDetailFetchFailure())
   }
 }
-
+/* eslint-disable */
 function* MovieSaga() {
   yield takeEvery(MOVIE_FETCH, movieFetch)
-  yield takeEvery(MOVIE_FETCH_SUCCESS, movieFetchSuccess)
   yield takeEvery(MOVIE_FETCH_FAILURE, movieFetchFailure)
   yield takeEvery(MOVIE_DETAIL_FETCH, movieDetailFetch)
-  yield takeEvery(MOVIE_DETAIL_FETCH_SUCCESS, movieDetailFetchSuccess)
   yield takeEvery(MOVIE_DETAIL_FETCH_FAILURE, movieDetailFetchFailure)
 }
 

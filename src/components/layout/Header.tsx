@@ -20,6 +20,7 @@ const HeaderComponent = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const query = useQuery();
+  const search: string | null = query.get('search')
   const movieState = useSelector(selectMovieData, shallowEqual);
   const handleSearch = useCallback((e: any) => {
     e.preventDefault();
@@ -34,8 +35,9 @@ const HeaderComponent = () => {
           ...movieState.query,
       }
     };
+    const pathname: string = '/'
     navigate({
-      path: '/',
+      pathname,
       search: `?search=${formData.get('search')}`,
     }, { replace: true });
     dispatch(movieFetch(obj));
@@ -49,7 +51,7 @@ const HeaderComponent = () => {
         type="search" 
         name="search"
         id="search"
-        defaultValue={query.get('search')}
+        defaultValue={search || ''}
         placeholder="Search" 
         aria-label="Search"/>
       <button 

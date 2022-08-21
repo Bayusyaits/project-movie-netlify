@@ -2,15 +2,18 @@ import {
   Items
 } from '../../../redux/movies/reducer'
 import { Link } from 'react-router-dom';
+export interface ViewProps {
+  handleClick: (id: string) => void
+}
 type PropsData = {
   isLoading: boolean
   item: Items
   items: Items[]
 }
 
-type Props = PropsData
+type Props = PropsData & ViewProps
 
-function MovieDetailView({isLoading, item, items}: Props) {
+function MovieDetailView({isLoading, item, items, handleClick}: Props) {
   const notFound = () => {
     return (<><div>Not Found Bos</div></>)
   }
@@ -20,7 +23,7 @@ function MovieDetailView({isLoading, item, items}: Props) {
       const el: Items = data[i]
       a.push(
         <>
-          <div key={i} className="col mb-2">
+          <div key={el.imdbID} onClick={() => handleClick(el.imdbID)} className="col mb-2">
             <img src={el.Poster}
               alt={el.Title} className="w-100 rounded-3"/>
           </div>

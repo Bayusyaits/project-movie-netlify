@@ -1,4 +1,4 @@
-export const selectMovieDetailData = ({ Movies }: AppState) => ({
+export const selectMovieDetailData = ({ Movies }: any) => ({
     isLoading: Movies.isLoading,
     item: Movies.item,
     items: Movies.items,

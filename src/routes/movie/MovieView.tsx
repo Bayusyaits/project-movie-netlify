@@ -2,7 +2,7 @@ import {
   Items
 } from '../../redux/movies/reducer'
 export interface ViewProps {
-  handleClick: (params: unknown) => void
+  handleClick: (id: string) => void
 }
 
 type PropsData = {
