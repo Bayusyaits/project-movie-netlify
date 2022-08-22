@@ -58,41 +58,6 @@ const INITIAL_STATE: MovieState = {
     item: null
 };
 
-export function movieFetch(payload: string & Query) {
-    return {
-        type: MOVIE_FETCH,
-        payload
-    };
-}
-export function movieFetchSuccess(data: MovieState["items"]) {
-    return {
-        type: MOVIE_FETCH_SUCCESS,
-        data
-    };
-}
-export function movieFetchFailure() {
-    return {
-        type: MOVIE_FETCH_FAILURE,
-    };
-}
-export function movieDetailFetch(payload: string & Query) {
-    return {
-        type: MOVIE_DETAIL_FETCH,
-        payload
-    };
-}
-export function movieDetailFetchSuccess(data: MovieState["items"]) {
-    return {
-        type: MOVIE_DETAIL_FETCH_SUCCESS,
-        data
-    };
-}
-export function movieDetailFetchFailure() {
-    return {
-        type: MOVIE_DETAIL_FETCH_FAILURE,
-    };
-}
-
 export default function(state = INITIAL_STATE, action: any) {
   switch (action.type) {
     case MOVIE_FETCH: {

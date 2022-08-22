@@ -23,7 +23,10 @@ function MovieDetailView({isLoading, item, items, handleClick}: Props) {
       const el: Items = data[i]
       a.push(
         <>
-          <div key={el.imdbID} onClick={() => handleClick(el.imdbID)} className="col mb-2">
+          <div 
+            key={el.imdbID} 
+            onClick={() => handleClick(el.imdbID)} 
+            className="col mb-2 cursor-pointer">
             <img src={el.Poster}
               alt={el.Title} className="w-100 rounded-3"/>
           </div>
@@ -115,7 +118,7 @@ function MovieDetailView({isLoading, item, items, handleClick}: Props) {
     return (
       <>
         <section className="h-100 gradient-custom-2">
-          <div className="container h-100">
+          <div className="container h-100 mb-3">
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col col-lg-9 col-xl-7">
                 <div className="card border-0">

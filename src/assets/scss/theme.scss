@@ -4,3 +4,24 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
+
+.bg-danger {
+    background-color: #FE4300 !important;
+}
+
+.navbar-brand {
+    color: #FDFCFC !important;
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+    img {
+        position: absolute;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

@@ -2,12 +2,14 @@ import axios from 'axios'
 import { takeEvery, call, put } from "redux-saga/effects"
 import {
   Query,
-  Items,
+  Items
+} from './reducer'
+import {
   movieFetchSuccess,
   movieFetchFailure,
   movieDetailFetchSuccess,
   movieDetailFetchFailure
-} from './reducer'
+} from './actions'
 import {
   MOVIE_FETCH,
   MOVIE_FETCH_FAILURE,
@@ -29,7 +31,6 @@ const generateUrl = (uri: string, query: any) => {
     }
     return `${url}${operator}${q}`
 }
-
 
 const getData = (payload: Props) => {
   const { uri, params, query } = payload
