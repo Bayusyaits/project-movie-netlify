@@ -7,7 +7,6 @@ import {
   MOVIE_DETAIL_FETCH_FAILURE
 } from './types'
 export interface Query {
-  currentPage: number;
   limit: number;
   sortBy: string;
 }
@@ -33,11 +32,13 @@ export interface Items {
   }[]
 }
 export interface Query {
-  currentPage: number;
   limit: number;
   sortBy: string;
 }
-
+export interface Params {
+  uri: string;
+  params: string;
+}
 export interface MovieState {
     isLoading: boolean;
     query: Query;
@@ -49,7 +50,6 @@ export interface MovieState {
 const INITIAL_STATE: MovieState = {
     isLoading: false,
     query: {
-        currentPage: 1,
         limit: 20,
         sortBy: '',
     },

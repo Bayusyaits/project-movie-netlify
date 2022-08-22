@@ -11,7 +11,11 @@ import {
   MOVIE_DETAIL_FETCH_FAILURE
 } from './types';
 
-export const movieFetch = (payload: string & Query) => ({
+export const movieFetch = (payload: {
+  uri: string
+  params: string
+  query: Query
+}) => ({
   type: MOVIE_FETCH,
   payload
 })
@@ -22,7 +26,11 @@ export const movieFetchSuccess = (data: MovieState["items"]) => ({
 export const movieFetchFailure = () => ({
   type: MOVIE_FETCH_FAILURE,
 })
-export const movieDetailFetch = (payload: string & Query) => ({
+export const movieDetailFetch = (payload: {
+  uri: string
+  params: string
+  query: Query
+}) => ({
   type: MOVIE_DETAIL_FETCH,
   payload
 })
